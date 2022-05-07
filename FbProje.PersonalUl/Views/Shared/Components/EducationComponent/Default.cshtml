@@ -1,0 +1,48 @@
+﻿@using Entities.Dtos.EducationDtos
+@model List<EducationListDto>
+
+     <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Eğitim</h2>
+
+                    @foreach (var item in Model)
+                   {
+                           <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">@*@item.Title*@</h3>
+                            <div class="subheading mb-3">@item.SubTitle</div>
+                            <div>@item.Description</div>
+                            
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">@item.StartDate.ToString("Y") - 
+
+                        @{
+                            if(@item.EndDate.HasValue)
+                            {
+                                <span>@((DateTime)item.EndDate).ToString("Y")) </span>
+                            }
+                            else
+                            {
+                                 <span>Devam Ediyor... </span>
+                            }
+                        }
+                           
+                        }
+                        </span></div>
+                    </div>
+                  
+  
+                   }
+
+              
+
+
+
+
+
+                </div>
+            </section>
+
+
+
+

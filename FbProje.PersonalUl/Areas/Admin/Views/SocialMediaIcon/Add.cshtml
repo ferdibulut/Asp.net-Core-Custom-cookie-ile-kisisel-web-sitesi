@@ -1,0 +1,19 @@
+﻿@model SocialMediaIconAddDto
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/View.cshtml";
+}
+<form asp-action="Add" asp-controller="SocialMediaIcon" method="post">
+     <div class="form-group">
+         <label>İkon:</label><span asp-validation-for="@Model.Icon"></span>
+         <input  type="text" asp-for="@Model.Icon" class="form-control"/>
+     </div>
+     <div class="form-group">
+         <label>Link :</label><span asp-validation-for="@Model.Link"></span>
+         <input  type="text" asp-for="@Model.Link" class="form-control"/>
+     </div>
+     <div class="form-group">
+         <button type="submit" class="btn btn-primary">Kaydet</button>
+     </div>
+</form>
+

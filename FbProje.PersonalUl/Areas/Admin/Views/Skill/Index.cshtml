@@ -1,0 +1,39 @@
+﻿@model List<SkillListDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/View.cshtml";
+}
+<div style="float:right">
+<a asp-action="add"asp-controller="Skill" class="btn btn-outline-dark">Yeni Kayıt</a>
+</div>
+<div class="container">
+<div class="col-8">
+<table class="table table-hover table-striped table-bordered table-sm">
+   <thead>
+       <tr>
+           <th>
+               Yetenek Bilgisi
+           </th>
+           <th>
+               İşlem
+              
+              
+           </th>
+       </tr>
+   </thead>
+    <tbody>
+    @foreach (var item in Model)
+   {
+       <tr>
+           <td>
+              @item.Description
+           </td>
+           <td>
+              <a asp-action="Update" asp-controller="Skill" asp-route-id="@item.Id" class="btn btn-warning btn-sm mr-1">Güncelle</a>
+              <a onclick="return confirm('Silmek İstediginizden Eminmisiniz?')" asp-action="Delete" asp-controller="Skill" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Sil</a> 
+           </td>
+       </tr>
+   }
+   </tbody></div>
+</table>
+</div>

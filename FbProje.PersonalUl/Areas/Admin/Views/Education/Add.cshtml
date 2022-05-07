@@ -1,0 +1,35 @@
+﻿@model EducationAddDto
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/View.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+<form asp-action="Add" asp-controller="Education" method="post">
+     <div class="form-group">
+         <label>Egitim aldıgı kurum:</label><span asp-validation-for="@Model.Title"></span>
+         <input  type="text" asp-for="@Model.Title" class="form-control"/>
+     </div>
+     <div class="form-group">
+         <label>Egitim Alanı:</label><span asp-validation-for="@Model.SubTitle"></span>
+         <input  type="text" asp-for="@Model.SubTitle" class="form-control"/>
+     </div>
+     <div class="form-group">
+         <label>Başlangıc tarihi:</label><span asp-validation-for="@Model.StartDate"></span>
+         <input  type="Date" asp-for="@Model.StartDate" class="form-control"/>
+     </div>
+     <div class="form-group">
+         <label>Bitiş Tarihi:</label><span asp-validation-for="@Model.EndDate"></span>
+         <input  type="Date" asp-for="@Model.EndDate" class="form-control"/>
+     </div>
+     <div class="form-group">
+         <label>Derecesi:</label><span asp-validation-for="@Model.Description"></span>
+         <input  type="text" asp-for="@Model.Description" class="form-control"/>
+     </div>
+     <div class="form-group my-3">
+         <button type="submit" class="btn btn-primary">Kaydet</button>
+     </div>
+</form>
+</div></div>
+</div>
